@@ -1,0 +1,5 @@
+.venv
+.hive-metastore
+.spark-warehouse
+data
+.DS_Store
