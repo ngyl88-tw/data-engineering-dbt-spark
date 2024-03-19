@@ -21,10 +21,12 @@ RUN apt-get update && \
     ln -s /usr/share/java/postgresql-jdbc4.jar /usr/spark/jars/postgresql-jdbc4.jar
 
 # Download delta jar
-# RUN wget -q "https://repo1.maven.org/maven2/io/delta/delta-core_2.12/2.4.0/delta-core_2.12-2.4.0.jar" && \
-#     wget -q "https://repo1.maven.org/maven2/io/delta/delta-storage/2.4.0/delta-storage-2.4.0.jar" && \
-#     mv delta-core_2.12-2.4.0.jar /usr/spark/jars/ && \
-#     mv delta-storage-2.4.0.jar /usr/spark/jars/
+RUN wget -q "https://repo1.maven.org/maven2/io/delta/delta-core_2.12/2.4.0/delta-core_2.12-2.4.0.jar" && \
+    wget -q "https://repo1.maven.org/maven2/io/delta/delta-storage/2.4.0/delta-storage-2.4.0.jar" && \
+    wget -q "https://repo1.maven.org/maven2/io/delta/delta-hive_2.12/0.6.0/delta-hive_2.12-0.6.0.jar" && \
+    mv delta-core_2.12-2.4.0.jar /usr/spark/jars/ && \
+    mv delta-storage-2.4.0.jar /usr/spark/jars/ && \
+    mkdir -p /usr/hive/jars && mv delta-hive_2.12-0.6.0.jar /usr/hive/jars/
 
 # Install Iceberg
 # RUN wget -q "https://search.maven.org/remotecontent?filepath=org/apache/iceberg/iceberg-spark-runtime-3.5_2.12/1.5.0/iceberg-spark-runtime-3.5_2.12-1.5.0.jar" && \

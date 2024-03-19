@@ -12,7 +12,6 @@ services:
       --class org.apache.spark.sql.hive.thriftserver.HiveThriftServer2
       --name Thrift JDBC/ODBC Server
       --hiveconf hive.server2.thrift.bind.host=0.0.0.0
-      --total-executor-cores 10 
     volumes:
       - ./.spark-warehouse/:/spark-warehouse/
       - ./docker/hive-site.xml:/usr/spark/conf/hive-site.xml
