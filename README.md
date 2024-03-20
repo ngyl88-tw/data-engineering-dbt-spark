@@ -23,8 +23,7 @@
 - `poetry run dbt run` to start running dbt
 
 ## Creating external tables in container's context
-- Start Hive client in container `docker exec -it delta-lake-dbt-spark3-thrift-1 beeline`
-- Connect to Hive server with `!connect jdbc:hive2://localhost:10000` user: root and no password
+- Connect to Hive with client in container `docker exec -it delta-lake-dbt-spark3-thrift-1 beeline -u "jdbc:hive2://localhost:10000/default" -n root`
 - Create external table by importing the data from delta format
 ```
 CREATE TABLE default.ecommerce
