@@ -1,0 +1,9 @@
+version: 2
+
+# List of sources, see https://docs.getdbt.com/reference/source-configs Property file
+
+sources:
+  - name: default
+    tables:
+      - name: ecommerce
+        identifier: 'ecommerce'
