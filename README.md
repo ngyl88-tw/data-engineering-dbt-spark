@@ -38,3 +38,8 @@ CREATE TABLE rfn.ecommerce
 USING DELTA
 LOCATION '/data/delta/rfn/ecommerce';
 ```
+
+## References
+Most of the code here take lots of inspirations from [this awesome blog](https://medium.com/@irshadkt.mec/dbt-spark-with-apache-iceberg-7840e44c25e1)
+
+Most of the Dockerfiles came from this [repo](https://github.com/dbt-labs/dbt-spark)
