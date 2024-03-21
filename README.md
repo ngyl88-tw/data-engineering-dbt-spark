@@ -24,9 +24,17 @@
 
 ## Creating external tables in container's context
 - Connect to Hive with client in container `docker exec -it delta-lake-dbt-spark3-thrift-1 beeline -u "jdbc:hive2://localhost:10000/default" -n root`
-- Create external table by importing the data from delta format
+- Create external tables by importing the data from delta format
 ```
-CREATE TABLE default.ecommerce
+CREATE SCHEMA raw;
+CREATE SCHEMA rfn;
+CREATE SCHEMA ast;
+
+CREATE TABLE raw.ecommerce
 USING DELTA
-LOCATION '/data/delta/ecommerce'
+LOCATION '/data/delta/raw/ecommerce';
+
+CREATE TABLE rfn.ecommerce
+USING DELTA
+LOCATION '/data/delta/rfn/ecommerce';
 ```
