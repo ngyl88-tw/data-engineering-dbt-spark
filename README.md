@@ -1,6 +1,7 @@
 # Pre-requisites
 - Java
 - Poetry
+- Docker
 
 # Data sources
 - https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store (Selected for Notebook for large .csv)
